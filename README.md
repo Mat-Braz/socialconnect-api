@@ -1,30 +1,29 @@
-# SocialConnect API
+# Social Connect API
 
-> API RESTful de gestão para instituições sociais (ONGs, bancos de alimentos,
-> CRAS, abrigos). Conecta doadores, voluntários e beneficiários.
+API RESTful desenvolvida para otimizar a gestão administrativa de instituições sociais, permitindo o registo e o controlo eficiente de beneficiários, doadores, doações e inventário de produtos.
 
-**Disciplina:** Tópicos Especiais em Sistemas para Internet III
-**Stack:** Java 21 · Spring Boot 4.1.1 · JPA · H2 (dev) · PostgreSQL (prod)
+## 🚀 Tecnologias Utilizadas
 
----
+* **Java 21**
+* **Spring Boot** (Web, Data JPA, Validation)
+* **Flyway** (Gestão de migrações de base de dados)
+* **PostgreSQL** (Base de dados principal) / **H2 Database** (Base de dados em memória para testes)
+* **Springdoc OpenAPI (Swagger UI)** para documentação interativa
+* **Lombok** para redução de código boilerplate
+* **JUnit 5 & Testcontainers** para testes de integração
 
-## Como Rodar
+## ⚙️ Arquitetura e Módulos
 
-### Pré-requisitos
+O projeto segue uma arquitetura em camadas bem definida (`Controller`, `Service`, `Repository`, `DTO`, `Model`), dividida nos seguintes domínios principais:
 
-- JDK 21 LTS ([Adoptium](https://adoptium.net/))
-- Maven 3.9+ (ou use o wrapper: `./mvnw`)
-- IDE: IntelliJ IDEA (recomendado) ou VS Code
+1. **Beneficiários**: Gestão de dados pessoais, moradas e registo de vulnerabilidade social.
+2. **Doadores**: Controlo de pessoas físicas e jurídicas com validações customizadas de CPF e contactos.
+3. **Doações**: Registo e categorização de entradas de apoio (alimentos, vestuário, valores financeiros).
+4. **Produtos (Inventário)**: Controlo de stock atual, stock mínimo, unidades de medida e categorias via enums.
 
-### Passos
+## 📝 Documentação da API (Swagger)
 
-```bash
-# 1. Clone o repositório
-git clone <url-do-repo>
-cd socialconnect-api
+Com a aplicação a correr, a documentação interativa dos endpoints pode ser acedida diretamente no navegador através do link:
 
-# 2. Compile o projeto
-mvn clean compile
-
-# 3. Rode a aplicação
-mvn spring-boot:run
+```text
+http://localhost:8080/swagger-ui.html

@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Frontend e arquivos locais
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+*.tsbuildinfo
